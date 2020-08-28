@@ -24,7 +24,7 @@ typo={"ă":"aw","â":"aa","á":"as","à":"af","ả":"ar","ã":"ax","ạ":"aj","�
 "Ể":"Eer","Ễ":"Eex","Ệ":"Eej","Ú":"Us","Ù":"Uf","Ủ":"Ur","Ũ":"Ux","Ụ":"Uj","Ư":"Uw","Ứ":"Uws","Ừ":"Uwf","Ử":"Uwr","Ữ":"Uwx",
 "Ự":"Uwj","Í":"Is","Ì":"If","Ỉ":"Ir","Ị":"Ij","Ĩ":"Ix","Ý":"Ys","Ỳ":"Yf","Ỷ":"Yr","Ỵ":"Yj","Đ":"Dd"}
 
-    region={"ẻ":"ẽ","ẽ":"ẻ","ũ":"ủ","ủ":"ũ","ã":"ả","ả":"ã","ỏ":"õ","õ":"ỏ","i":"j", "à":"ồ"}
+region={"ẻ":"ẽ","ẽ":"ẻ","ũ":"ủ","ủ":"ũ","ã":"ả","ả":"ã","ỏ":"õ","õ":"ỏ","i":"j", "à":"ồ"}
 region2={"s":"x","l":"n","n":"l","x":"s","d":"gi","S":"X","L":"N","N":"L","X":"S","Gi":"D","D":"Gi"}
 
 vowel=list("aeiouyáàảãạâấầẩẫậăắằẳẵặóòỏõọôốồổỗộơớờởỡợéèẻẽẹêếềểễệúùủũụưứừửữựíìỉĩịýỳỷỹỵ")
@@ -155,8 +155,8 @@ def generate_data_only_noisy_non_encode(data, batch_size, pivot1, pivot2):
                   batch_size_noise += 1
     return x_non_decode
 
-BATCH_TEST_SIZE = 512
-test_non_encode = generate_data_only_noisy_non_encode(["Ngũ Hành Sơn"], batch_size = BATCH_TEST_SIZE, pivot1 = 0.93, pivot2 = 0.986)
+BATCH_TEST_SIZE = 512   
+test_non_encode = generate_data_only_noisy_non_encode(["an đồn"], batch_size = BATCH_TEST_SIZE, pivot1 = 0.93, pivot2 = 0.986)
 
 df = pd.DataFrame(test_non_encode, columns=['case'])    
-df.to_csv("./File_Test/nguhanhson.csv", sep="\t", encoding='utf-8', index=False)
+df.to_csv("./File_Test/andon.csv", sep="\t", encoding='utf-8', index=False)
